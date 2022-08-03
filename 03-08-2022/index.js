@@ -7,4 +7,4 @@ alert("Hello", yourName);
 d = prompt("Ngày");
 m = prompt("Tháng");
 y = prompt ("Năm");
-document.write(d + "/" + m + "/" + y);
+document.write(d + "-" + m + "-" + y);
