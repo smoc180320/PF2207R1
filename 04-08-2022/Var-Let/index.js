@@ -25,7 +25,7 @@ document.write('<br/>');
 a = prompt("a");
 b = prompt("b");
 c = a%b;
-kt = "đúng"
+kt = "đúng";
 if (c > 0)
     kt = "sai";
 alert("a là bội số của b: " + kt);
