@@ -6,4 +6,4 @@ tn = n * t1;
 let td = parseInt(a);
 let tl = parseInt(tn);
 tt = td + tl;
-document.write("Số tiền gốc lẫn lãi là: " + tt);
+document.write("Số tiền gốc lẫn lãi là: " + tt + " (triệu đồng)");
