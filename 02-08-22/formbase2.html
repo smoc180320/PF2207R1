@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(241, 241, 154);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #th {
+            background-color: rgb(151, 231, 231);
+            color: blue;
+            width: 500px;
+        }
+        .color {
+            color: blue;
+        }
+        #col1 {
+            width: 120px;
+        }
+        #text1 {
+            width: 250px;
+        }
+        #text2 {
+            width: 150px;
+        }
+       
+        #col {
+            width: 200px;
+            height: 50px;
+        }
+        #text4 {
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th id="th" colspan="2">ĐĂNG KÝ HỌC VIÊN</th>
+        </tr>
+        <tr>
+            <td class="color" id="col1">Họ và tên</td>
+            <td>
+                <input type="text" name="" id="text1">
+            </td>
+        </tr>
+        <tr>
+            <td class="color">Ngày sinh</td>
+            <td>
+                <input type="text" name="" id="text2">
+            </td>
+        </tr>
+        <tr>
+            <td class="color">Giới tính</td>
+            <td>
+                <label for="">
+                    <input type="radio" name ="name"> Nam 
+                    <input type="radio" name="name"> Nữ
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td class="color" id="text3">Địa chỉ</td>
+            <td rowspan="3">
+                <input type="text" name="" id="col">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="color">Lớp</td>
+            <td>
+                <select name="" id="">
+                    <option value="">-Chọn lớp-</option>
+                    <option value="">Đồ họa</option>
+                    <option value="">Lập Trình</option>
+                    <option value="">Đàn Guitar</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="color">Email</td>
+            <td>
+                <input type="text" name="" id="text4">
+            </td>
+        </tr>
+        <tr>
+            <td class="color">Điện Thoại</td>
+            <td>
+                <input type="text" name="" id="text4">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">Đăng ký</button>
+                <button type="reset">Nhập lại</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
