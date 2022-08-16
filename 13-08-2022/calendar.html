@@ -5,23 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            font-family: Tahoma, sans-serif;
+            font-size: 20px;
+        }
+        input, button{
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
+    <label for="year">Nhập năm Dương lịch</label>
+    <input type="text" name="year" id="year">
+    <button type="button" onclick="check()">Xem</button>
+    <p>Âm lịch là năm: <span id="kq"></span></p>
     <script>
-        let a = parseInt(prompt("Nhập số năm cần tra: ", ''))
-        b = a%10;
-        c = a%12;
-        switch(b){
-            case 0:
-                b = "Canh";
-            break;
-        };
-        switch (c){
-            case 0:
-                c = "Thân";
+        function check(){
+            let a = document.getElementById("year").value;
+            b = a%10;
+            c = a%12;
+            switch(b){
+                case 0:
+                    b = "Canh";
                 break;
+                case 1:
+                    b = "Tân";
+                break;
+                case 2:
+                    b = "Nhâm";
+                break;
+                case 3:
+                    b = "Quý";
+                break;
+                case 4:
+                    b = "Giáp";
+                break;
+                case 5:
+                    b = "Ất";
+                break;
+                case 6:
+                    b = "Bính";
+                break;
+                case 7:
+                    b = "Đinh";
+                break;
+                case 8:
+                    b = "Mậu";
+                break;
+                case 8:
+                    b = "Kỷ";
+                break;
+            };
+            switch (c){
+                case 0:
+                    c = "Thân";
+                    break;
+                case 1:
+                    c = "Dậu";
+                    break;
+                case 2:
+                    c = "Tuất";
+                    break;
+                case 3:
+                    c = "Hợi";
+                    break;
+                case 4:
+                    c = "Tí";
+                    break;
+                case 5:
+                    c = "Sửu";
+                    break;
+                case 6:
+                    c = "Dần";
+                    break;
+                case 7:
+                    c = "Mão";
+                    break;
+                case 8:
+                    c = "Thìn";
+                    break;
+                case 9:
+                    c = "Tỵ";
+                    break;
+                case 10:
+                    c = "Ngọ";
+                    break;
+                case 11:
+                    c = "Mùi";
+                    break;
+            }
+            document.getElementById("kq").innerHTML = b + " " + c;
+            
         }
-        document.write("Năm âm lịch là " + b + " " + c);
+        
+        
     </script>
 </body>
 </html>
