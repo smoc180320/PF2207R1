@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cal, #result, button{
+            margin-top: 10px;
+        }
+        button, input {
+            border: 1px solid red;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div>
+        <input type="text" id="number1">
+        <input type="text" id="number2">
+    </div>
+    <div>
+        <button id="cal1" type="button" value="+" onclick="calculate('+')">Addition(+)</button>
+        <button id="cal2" type="button" value="-" onclick="calculate1('-')">Subtraction</button>
+        <button id="cal3" type="button" value="*" onclick="calculate2('*')">Multiplication(X)</button>
+        <button id="cal4" type="button" value="/" onclick="calculate3('/')">Division(/)</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        
+        function calculate(value) {
+            let a = document.getElementById("cal1").value;
+            let b = document.getElementById("number1").value;
+            let c = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = "Result Addition: " + eval(b + a + c);
+        }
+        function calculate1(value) {
+            let a = document.getElementById("cal2").value;
+            let b = document.getElementById("number1").value;
+            let c = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = "Result Subtraction: " + eval(b + a + c);
+        }
+        function calculate2(value) {
+            let a = document.getElementById("cal3").value;
+            let b = document.getElementById("number1").value;
+            let c = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = "Result Multiplication: " + eval(b + a + c)
+        }
+        function calculate3(value) {
+            let a = document.getElementById("cal4").value;
+            let b = document.getElementById("number1").value;
+            let c = document.getElementById("number2").value;
+            document.getElementById("result").innerHTML = "Result Division: " + eval(b + a + c)
+        }
+    
+
+    </script>
+</body>
+</html>
