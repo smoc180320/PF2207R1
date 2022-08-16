@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fruit, button, p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giá Hoa Quả</h1>
+    <form action="" method="post">
+        <select name="fruit" id="fruit">
+            <option value="Ổi">Ổi</option>
+            <option value="Dưa Hấu">Dưa Hấu</option>
+            <option value="Táo">Táo</option>
+            <option value="Cam">Cam</option>
+            <option value="Xoài">Xoài</option>
+            <option value="Chôm chôm">Chôm chôm</option>
+            <option value="Măng cụt">Măng cụt</option>
+        </select>
+        <button type="button" onclick="myFunction()" >Xem Giá</button>
+        <p id="cost"></p>
+        <p id="cost1"></p>
+        <p id="cost2"></p>
+        <p id="cost3"></p>
+        <p id="cost4"></p>
+        <p id="cost5"></p>
+        <p id="cost6"></p>
+    </form>
+    <script>
+        function myFunction(){
+            var fruits = document.getElementById("fruit").value;
+            var oi = 20000;
+            var duahau = 20000;
+            var tao = 30000;
+            var xoai = 30000;
+            var cam  = 40000;
+            var chomchom = 40000;
+            var mangcut = 50000;
+        switch(fruits) {
+            case "Ổi":
+                document.getElementById("cost").innerHTML = fruits + ": " + oi + " VNĐ/kg";
+                break;
+            case "Dưa Hấu":
+                document.getElementById("cost1").innerHTML = fruits + ": " + duahau + " VNĐ/kg";
+                break;
+            case "Táo":
+                document.getElementById("cost2").innerHTML = fruits + ": " + tao + " VNĐ/kg";
+                break;
+            case "Xoài":
+                document.getElementById("cost3").innerHTML = fruits + ": " + xoai + " VNĐ/kg";
+                break;
+            case "Cam":
+                document.getElementById("cost4").innerHTML = fruits + ": " + cam + " VNĐ/kg";
+                break;
+            case "Chôm chôm":
+                document.getElementById("cost5").innerHTML = fruits + ": " + chomchom + " VNĐ/kg";
+                break;
+            case "Măng cụt":
+                document.getElementById("cost6").innerHTML = fruits + ": " + mangcut + " VNĐ/kg";
+                break;
+        }
+        }
+        
+       
+      
+      
+    </script>
+</body>
+</html>

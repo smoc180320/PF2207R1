@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        p {
+            text-align: center;
+            font-weight: 700;
+        }
+        select, input {
+            width: 100px;
+            height: 30px;
+        }
+        button {
+            height: 30px;
+            width: 100px;
+            margin-top: 50px;
+            background-color: purple;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        h5{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div id="content1">
+            <p>Amount</p>
+            <input type="number" value="amount" id="amount">
+        </div>
+        <div id="content2">
+            <p>From Currency</p>
+            <select name="currency" id="currency">
+                <option value="usd">USD</option>
+                <option value="VNĐ">VietNam</option>
+                <option value="euro">Euro</option>
+            </select>
+        </div>
+        <div id="content3">
+            <p>To Currency</p>
+            <select name="money" id="money">
+                <option value="VNĐ">VietNam</option>
+                <option value="usd">USD</option>
+                <option value="euro">Euro</option>
+            </select>
+        </div>
+        <button type="button" onclick="myFunction()">Convert</button>
+    </div>
+    <h5 id="convertmoney"></h5>
+
+
+
+    <script>
+        function myFunction(){
+            let money = document.getElementById('money').value;
+            let currency = document.getElementById('currency').value;
+            let amount = Number.parseFloat(document.getElementById('amount').value);
+            let a = "VND";
+            let b = "$";
+            let c = "Euros"
+            if (money == "VNĐ") {
+            switch(currency) {
+                case ('usd'):
+                    money = 24000 * amount;
+                    break;
+                case ('euro'):
+                    money = 25000 * amount;
+                    break;
+                case ('VNĐ'):
+                    money = amount;
+                    break;
+            }; d = a} else if (money == "usd"){
+                switch(currency) {
+                case ('euro'):
+                    money = (25/24) * amount;
+                    break;
+                case ('VNĐ'):
+                    money = 1/24000 * amount;
+                    break;
+                case ('usd'):
+                    money = amount;
+                    break;
+            }; d = b} else {
+                switch(currency){
+                    case ('VNĐ'):
+                        money = 1/25 * amount;
+                        break;
+                    case ('usd'):
+                        money = 24/25 * amount;
+                        break;
+                }; d = c
+            }
+            document.getElementById('convertmoney').innerHTML = "Result: " + money + d;
+        }
+    </script>
+</body>
+</html>

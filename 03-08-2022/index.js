@@ -4,7 +4,7 @@ alert("Hello", yourName);
 
 // Bài nhập xuất ngày tháng
 
-d = prompt("Ngày");
-m = prompt("Tháng");
-y = prompt ("Năm");
+let d = prompt("Ngày");
+let m = prompt("Tháng");
+let y = prompt ("Năm");
 document.write(d + "-" + m + "-" + y);
