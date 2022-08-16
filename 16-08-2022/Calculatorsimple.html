@@ -26,10 +26,19 @@
         <button id="cal2" type="button" value="-" onclick="calculate1('-')">Subtraction</button>
         <button id="cal3" type="button" value="*" onclick="calculate2('*')">Multiplication(X)</button>
         <button id="cal4" type="button" value="/" onclick="calculate3('/')">Division(/)</button>
+        <!-- <input type="button" value="+" class="add" onclick="calculate()">
+        <input type="button" value="-" class="add" onclick="calculate()">
+        <input type="button" value="*" class="add" onclick="calculate()">
+        <input type="button" value="/" class="add" onclick="calculate()"> -->
     </div>
     <div id="result"></div>
     <script>
-        
+        // function calculate(value) {
+        //     let a = document.getElementsByClassName("add").value;
+        //     let b = document.getElementById("number1").value;
+        //     let c = document.getElementById("number2").value;
+        //     document.getElementById("result").innerHTML = eval(b + a + c);
+        // }
         function calculate(value) {
             let a = document.getElementById("cal1").value;
             let b = document.getElementById("number1").value;
