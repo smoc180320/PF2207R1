@@ -8,9 +8,9 @@
 </head>
 <body>
     <form action="">
-        <label for="">Nhập số cân nặng (kg)</label>
+        <label for="weight">Nhập số cân nặng (kg)</label>
         <input type="text" name="" id="weight" value=""> <br> <br>
-        <label for="">Nhập chiều cao (m)</label>
+        <label for="hight">Nhập chiều cao (m)</label>
         <input type="text" name="" id="hight" value="">
     </form>
      <br>
@@ -36,7 +36,7 @@
                     document.getElementById("kq").innerHTML = "Bạn béo phì cấp độ I";
                 } else if (bmi >=35 && bmi < 40) {
                     document.getElementById("kq").innerHTML = "Bạn béo phì cấp độ II";
-                } else if (bmi >=40) {
+                } else {
                     document.getElementById("kq").innerHTML = "Bạn béo phì cấp độ III";
                 }
             }
