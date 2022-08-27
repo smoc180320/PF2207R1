@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: coral;
+            padding: 20px;
+            margin: auto;
+            width: 400px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        input {
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+        button {
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+        }
+       .button1{
+           margin-left: 110px;
+       }
+       .color {
+           background-color: rgb(88, 174, 236);
+       }
+       span {
+           color: blue;
+           font-size: 30px;
+           font-weight: 800;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="so1">Nhập số vào</label>
+        <input type="text" id="so1">
+        <div class="button1">
+            <button class="color" type="button" onclick="ok()">OK</button>
+            <button type="button" onclick="cancle()">Cancel</button>
+        </div>
+
+        <p>Số đảo ngược là: <span id="kq"></span> </p>
+        <div class="button1">
+            <button class="color" type="button" onclick="ok1()">Reload</button>
+        </div>
+    </div>
+
+    <script>
+        
+
+        function ok() {
+            let a = document.getElementById("so1").value;
+            let z = "";
+            for (let i = a.length-1; i>=0; i--) {
+                z = z + a[i]
+                document.getElementById("kq").innerHTML = z;
+            }
+
+        }
+        function cancle(){
+            document.getElementById("so1").value = "";
+        }
+        function ok1(){
+            location.reload();
+        }
+    </script>
+</body>
+</html>
