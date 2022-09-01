@@ -25,29 +25,35 @@
     <p>Con số máy mắn: <span id="lucky"></span></p>
     <script>
         function game() {
+            // nhập số lớn nhất trong dãy số cần đoán (ví dụ nhập 5 thì dãy số là 0,1,2,3,4,5)
             let soMax = Number(document.getElementById("sonhap").value);
                 soMax++;
             let j = 0;
+            // in ra dãy số của trò chơi
             let text = "";
             for (j = 0; j < soMax; j++){
                 text += " " + j + " ";
             }
             document.getElementById("dayso").innerHTML = text;
+            // chọn số may mắn ngẫu nhiên trong dãy số của trò chơi;
             let b = Math.floor(Math.random() * soMax);
+            // dùng vòng lặp 3 lần để kiểm tra số người chơi nhập vào có đúng với con số may mắn (b) hay không
             let i = 0;
             let z = false;
                 for (i = 0; i < 3; i++) {
+                    // người chơi sẽ nhập số dự đoán
                     let soDuDoan = prompt("Mời nhập số dự đoán");
+                    // kiểm tra số dự đoán có bằng con số may mắn hay ko (b)
+                    // nếu đúng thì dừng lại không kiểm tra nữa
                     if (soDuDoan == b) {
                         z = true;
                         break;
                     }
                 }
+                // xuất ra màn hình kết quả đúng hay sai dựa vào giá trị của biến z bây giờ true hay false
                 if (z == true) {
-                    // alert("Chính xác");
                     document.getElementById("kq").innerHTML = "Chính xác";
                 } else {
-                    // alert("Không chính xác");
                     document.getElementById("kq").innerHTML = "Không chính xác";
                 }
                 console.log(b);

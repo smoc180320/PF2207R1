@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tính tổng các số trong khoảng</h1>
+    <label for="n1">Nhập số thứ nhất</label>
+    <input type="number" name="" id="n1"> <br> <br>
+    <label for="n2">Nhập số thứ hai</label>
+    <input type="number" name="" id="n2"> <br> <br>
+    <button type="button" onclick="myFunction()">Tính kết quả</button>
+    <p>Kết quả: <span id="kq"></span></p>
+    <script>
+        function myFunction() {
+            let a = parseInt(document.getElementById("n1").value);
+            let b = parseInt(document.getElementById("n2").value);
+            let c = 0;
+            if (a > b) {
+                d = a;
+                a = b;
+                b = d;
+            }
+            for (i = a; i <= b; i++) {
+                c = c + i;
+            }
+            document.getElementById("kq").innerHTML = c;
+        }
+        
+    </script>
+</body>
+</html>

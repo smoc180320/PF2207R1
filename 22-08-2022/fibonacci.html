@@ -10,19 +10,20 @@
     <label for="so">Nhập số lượng Fibonacci cần in</label>
     <input type="number" id="sonhap">
     <button type="button" onclick="so()">Show Number</button>
+    <p id="kq"></p>
     <script>
         function so(){
             let n = Number(document.getElementById("sonhap").value);
             let i = 0;
-            let f0 = 1;
+            let f0 = 0;
             let f1 = 1;
             while (i < n) {
-                document.writeln(`  ${f0}`);
+                
                 const tmp = f0;
                 f0 = f1;
                 f1 = tmp + f1;
                 i++;
-                
+                document.writeln(`  ${f0}`);
             }
         }
         

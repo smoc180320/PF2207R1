@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 50px;
+        }
+        #kq2, #kq3 {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="kq"></p>
+        <p id="kq1"></p>
+        <p id="kq2"></p>
+        <p id="kq3"></p>
+    </div>
+    <script>
+        // tam giác 1
+        let z = "";
+        let a = "*";
+        for (let i = 0; i < 5; i++) {
+            z = z + "<br>"
+            for (let j = 0; j <= i; j++) {
+                z = z + a;
+            }
+        }
+        document.getElementById("kq").innerHTML = z + "<br>";
+        // tam giác 2
+        let z1 = "";
+        let a1 = "*";
+        for (i = 5; i > 0; i--){
+            z1 = z1 + "<br>";
+            for (let j = i; j > 0; j--) {
+                z1 = z1 + a1;
+            }
+        }
+        document.getElementById("kq1").innerHTML = z1 + "<br>";
+
+        // tam giác 3
+        let z2 = "";
+        let a2 = "*";
+        for (let i = 0; i < 5; i++) {
+            z2 = z2 + "<br>"
+            for (let j = 0; j <= i; j++) {
+                z2 = z2 + a2;
+            }
+        }
+        document.getElementById("kq2").innerHTML = z2 + "<br>";
+        // tam giác 4
+        let z3 = "";
+        let a3 = "*";
+        for (i = 5; i > 0; i--){
+            z3 = z3 + "<br>";
+            for (let j = i; j > 0; j--) {
+                z3 = z3 + a3;
+            }
+        }
+        document.getElementById("kq3").innerHTML = z3+ "<br>";
+        
+        
+    </script>
+</body>
+</html>

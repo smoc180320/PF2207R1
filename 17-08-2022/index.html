@@ -7,12 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <script>
-        for (var i = 0; i <= 10; i +=2) {
-
-            console.log(i);
-        }
-    </script>
+    <button onclick="choi()">choi</button>
 </body>
+<script>
+    function choi() {
+        let number = +prompt("nhập số muốn đoán là: ");;
+        while (number > 100) {
+            number = number + ("người dùng vừa đoán là: ");
+        }
+        do {
+            alert("kết thúc lượt chơi" + number);
+        } while (number >= 100 || number <= 0)
+        alert("người dùng chơi lại " + number);
+    }
+</script>
+
 </html>
