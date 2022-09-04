@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            /* background-color: red; */
+            width: 400px;
+            height: 500px;
+            margin: auto;
+        }
+        .row {
+            display: flex;
+            flex-grow: 1;;
+            /* background-color: blue; */
+        }
+        .gameBoard {
+            display: flex;
+            flex-direction:  column;
+            align-items: stretch;
+        }
+        .btn {
+            flex-grow: 1;
+            margin: 5px;
+            font-size: 5em;
+            font-weight: bold;
+            width: 90px;
+            height: 90px;
+        }
+        .title{
+            font: 1.8em;
+            text-align: center;
+            color: rgb(21, 171, 197);
+        }
+        .controls{
+            text-align: center;
+
+        }
+        .xbtn{
+            color: rgb(122, 122, 17);
+        }
+        .obtn{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Game Caro</div>
+        <div class="gameBoard">
+            <div class="row">
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+            </div>
+            <div class="row">
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+            </div>
+            <div class="row">
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+            </div>
+            <div class="row">
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+                <button class="btn"onclick="play(this)"></button>
+            </div>
+        </div>
+        <hr>
+        <h2 id="statusText"></h2>
+        <div class="controls">
+            <button class="reset" onclick="resetGame()">Reset</button> 
+        </div>
+    </div>
+    <script>
+        let turn =true;
+        let clickedCount = 0;
+        // let statusText = document.querySelector("#statusText");
+        // let currentPlayer = "X";
+        // let running = false;
+        const winConditions = [
+            [0, 1, 2],
+            [1, 2, 3],
+            [4, 5, 6],
+            [5, 6 ,7],
+            [8, 9, 10],
+            [9, 10, 11],
+            [12, 13, 14],
+            [13, 14, 15]
+            [0, 4, 8],
+            [4, 8 ,12],
+            [1, 5, 9],
+            [5, 9, 13],
+            [2, 6, 10],
+            [6, 10, 14],
+            [3, 7, 11],
+            [7, 11, 15],
+            [0, 5, 10],
+            [5, 10, 15],
+            [3, 6, 9],
+            [6, 9, 12]
+        ];
+        let options = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+        function play(btn){
+            btn.innerText = turn ? 'X' : 'O';
+            btn.classList.add(turn ? 'xbtn' : 'obtn');
+            btn.setAttribute('disabled', 'diasabled');
+            
+            turn =!turn;
+            clickedCount++
+            if (clickedCount ==16){
+                alert("Game is finished")
+            }
+        }
+        function resetGame(){
+            if (!confirm("Reset game?")){
+                return;
+            }
+            let btns = document.getElementsByClassName('btn')
+            for (const element of btns) {
+                element.innerText ='';
+                element.classList.remove('xbtn');
+                element.classList.remove('obtn');
+                element.removeAttribute("disabled")
+            }
+            turn = true;
+            clickedCount = 0;
+        }
+        function checkWinner(){
+            let roundWon = false;
+            
+
+            for (i = 0; i < winConditions.length; i++){
+                const condition = winConditions[i];
+                const cellA = options[0];
+                const cellB = options[1];
+                const cellC = options[2];
+                if (cellA == "" || cellB == "" || cellC == ""){
+                    continue;
+                }
+                if (cellA == cellB && cellB == cellC) {
+                    roundWon = true;
+                    break;
+                }
+            }
+            console.log(roundWon)
+            if (roundWon){
+                document.getElementById("statusText").innerHTML = "Win"
+                turn = false;
+            } else{ play(btn);}
+        }
+    </script>
+</body>
+</html>

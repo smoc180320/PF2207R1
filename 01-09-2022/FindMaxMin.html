@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = [26, 45, 4, 465, 545, 22, 546, 7788, 544, 1, 111, 100];
+        // let maxInNumbers = Math.max.apply(Math, arr); 
+        // let minInNumbers = Math.min.apply(Math, arr);
+
+        // document.write("Giá trị lớn nhất là " +maxInNumbers+ "<br/>");
+        // document.write("Giá trị nhỏ nhất là " +minInNumbers+ "<br/>");  
+
+        function findMin(arr) {
+        var min = arr[0];
+        for (var i = 1; i < arr.length; ++i) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+        }
+        function findMax(arr) {
+            var max = arr[0];
+            for (var i = 1; i < arr.length; ++i) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        var nums = [];
+        for(var i = 0; i < 100; ++i) {
+            nums[i] = Math.floor(Math.random() * 101);
+        }
+        var minValue = findMin(nums);
+        var maxValue = findMax(nums);
+        document.write(nums)
+        document.write("<br/>");
+        document.write("The minimum value is: " + minValue);
+        document.write("<br/>");
+        document.write("The maximum value is: " + maxValue);
+
+        
+    </script>
+</body>
+</html>
