@@ -10,16 +10,36 @@
     <button onclick="choi()">choi</button>
 </body>
 <script>
-    function choi() {
-        let number = +prompt("nhập số muốn đoán là: ");;
-        while (number > 100) {
-            number = number + ("người dùng vừa đoán là: ");
-        }
-        do {
-            alert("kết thúc lượt chơi" + number);
-        } while (number >= 100 || number <= 0)
-        alert("người dùng chơi lại " + number);
+    // function choi() {
+    //     let number = +prompt("nhập số muốn đoán là: ");;
+    //     while (number > 100) {
+    //         number = number + ("người dùng vừa đoán là: ");
+    //     }
+    //     do {
+    //         alert("kết thúc lượt chơi" + number);
+    //     } while (number >= 100 || number <= 0)
+    //     alert("người dùng chơi lại " + number);
+    // }
+//     let a = new Array(12, false, "text");
+// x = 10;
+// if (a[1]) x = 20;
+// else x = 30;
+// console.log(x)
+
+    let a =5;
+    let b = 10;
+    function swap(a,b) {
+        let temp = a
+        a = b;
+        b = temp;
+        return "" + "a = " + a + "; b = " + b
     }
+    swap(a,b)
+
+    console.log(swap(a,b))
+    console.log("a = " + a);
+    console.log("b = " + b)
+
 </script>
 
 </html>
