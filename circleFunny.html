@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        // Vẽ một hình tròn đơn giản với kích thước cố định
+        function Circle(x, y, radius){
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        // lựa chọn số ngẫu nhiên từ 0 - 255
+        function getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+        // lựa chọn màu
+        function getRandomColor(){
+            var red = getRandomHex();
+            var green = getRandomHex();
+            var blue = getRandomHex();
+                return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        // 
+        function createCircle(){
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            var radius = Math.floor(Math.random() * 180); //bán kính ngẫu nhiên (số nguyên x 80 px)
+            var color = getRandomColor(); // sử dụng hàm lựa chọn màu ngẫu nhiên
+            var circle= new Circle(200, 200, radius); //truyền giá trị vòng tròn với tọa độ 200px, 200px, bán kính random bên trên
+            ctx.beginPath(); //tạo đường tròn ngẫu nhiên
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        // hàm tạo nhiều đường tròn đồng tâm từ 1 - 5
+        function createMultipleCircle(){
+            for(var i = 0; i < 5; i++){
+            createCircle();
+            console.log(i)
+                }
+        }
+        createMultipleCircle();
+
+        setInterval(createCircle, 1000)
+        
+        
+
+    </script>
+</body>
+</html> 
